@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Download } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,6 +12,7 @@ const Navbar = () => {
     { label: 'About', href: '#about' },
     { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
+    { label: 'Blog', href: '#blog' },
     { label: 'Experience', href: '#experience' },
     { label: 'Education', href: '#education' },
     { label: 'Contact', href: '#contact' },
@@ -32,7 +33,7 @@ const Navbar = () => {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-gray-300 hover:text-accent transition-colors"
+                className="text-gray-300 hover:text-accent transition-colors text-sm"
               >
                 {link.label}
               </a>
@@ -41,6 +42,15 @@ const Navbar = () => {
 
           {/* Social Links Desktop */}
           <div className="hidden md:flex items-center space-x-4">
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 px-4 py-2 bg-accent text-white rounded-lg hover:bg-accent-light transition-colors text-sm font-semibold"
+            >
+              <Download size={16} />
+              CV
+            </a>
             <a
               href="https://github.com/Siboniso123"
               target="_blank"
@@ -89,6 +99,15 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-accent font-semibold mt-4 pt-4 border-t border-gray-800"
+            >
+              <Download size={16} />
+              Download CV
+            </a>
           </div>
         </div>
       )}
